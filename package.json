@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node server/server.js",
-    "serve": "nodemon --inspect server/server.js"
+    "serve": "nodemon server/server.js"
   },
   "dependencies": {
     "express": "^4.16.4",
