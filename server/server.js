@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const server = express();
 
 server.use(morgan('dev'));
-server.use('/', express.static(path.join(__dirname, '../public')));
+server.use(express.static(path.join(__dirname, '../public')));
 
 server.disable('x-powered-by');
 
