@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+const config = require('../config');
+const fs = require('fs');
+
+module.exports = (() => {
+  const write = (data) => {
+    fs.writeFile('public/index.html', data, (err) => {
+      if (err) throw err;
+    });
+  };
+
+  const template = `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -33,12 +43,14 @@
     </div>
     <!-- Details -->
     <!-- <script src="http://34.205.143.254/bundle.js"></script> -->
-    <script src="http://localhost:3014/bundle.js"></script>
+    <script src="http://${config.details}/bundle.js"></script>
     <!-- Sidebar -->
     <!-- <script src="http://54.146.177.133/bundle.js"></script> -->
-    <script src="http://localhost:3015/bundle.js"></script>
+    <script src="http://${config.sidebar}/bundle.js"></script>
     <!-- Categories -->
     <!-- <script src="http://18.218.78.109/bundle.js"></script> -->
-    <script src="http://localhost:3016/bundle.js"></script>
+    <script src="http://${config.categories}/bundle.js"></script>
   </body>
-</html>
+</html>`;
+  write(template);
+})();
