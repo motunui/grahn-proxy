@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "forever start -r dotenv/config server/server.js",
-    "serve": "nodemon -r dotenv/config server/server.js"
+    "serve": "nodemon -r dotenv/config server/server.js",
+    "test": "npx cypress open"
   },
   "dependencies": {
     "axios": "^0.18.0",
